@@ -1,0 +1,200 @@
+* Windows
+  - c-x 2 : Split window horizontally
+  - c-x 3 : Split window vertically
+  - c-x 0 : Close current window
+  - c-x 1 : Close all but the current window
+  - c-x o : Cycle through the open windows.
+* Frames
+  - C-x 5 b : Switch buffers by opening a new frame.
+  - C-x 5 0 : Close the current frame.
+  - C-x 5 f : Open a file in new frame.
+  - C-x 5 o : switch between frame.
+* Tables
+*** Table
+    - C-c | : Format the selected content to table.
+    - C-u 2 C-c | : Formats the selected content to table and column are decided based on 2 spaces.
+*** Column :
+    #+ATTR_HTML: :border 2 :rules all :frame border
+    | Key            | Function                                                             |
+    |----------------+----------------------------------------------------------------------|
+    | M-left arrow   | move column left                                                     |
+    | M-right arrow  | move column right                                                    |
+    | Tab            | move forward                                                         |
+    | Shift-Tab      | move backword                                                        |
+    | M-Shift-left   | delete column                                                        |
+    | M-Shift-right  | insert column                                                        |
+    | Sorting Column | C-c ^ -- Then it ask for the type of sorting : Date, Numeric, String |
+*** Row :
+    #+ATTR_HTML: :border 2 :rules all :frame border
+    | Key        | Function                                                  |
+    |------------+-----------------------------------------------------------|
+    | M-up Arrow | move row up                                               |
+    | M-down     | move row down                                             |
+    | C-c ret    | Add horizontal rule : Mostly used for Table column names. |
+* Point :
+#+ATTR_HTML: :border 2 :rules all :frame border
+| Command            | Key Combination |
+|--------------------+-----------------|
+| Next line          | C-n             |
+| Previous line      | C-p             |
+| Next Charecter     | C-f             |
+| Previous Charecter | C-b             |
+|                    |                 |
+| Next word          | M-f             |
+| Previous word      | M-b             |
+|                    |                 |
+| Beginning of line  | C-a             |
+| End of line        | C-e             |
+|                    |                 |
+| Start of buffer    | M-<             |
+| ENd of buffer      | M->             |
+
+* Mark :
+  - C-space to start the mark
+  - C-w : Cut the text
+  - M-w : Copy the text
+  - C-y : Paste the text
+  - C-x C-x : Go from point to mark
+
+* Library loading
+** Load
+** require
+** auto-load
+** idle-require
+* Agenda :
+** [[http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html][AgendaTutorial]]
+   - C-c C-s to invoke calendar to schedule a task.
+   - C-c a to invoke aendar mode.
+     - t for TODO
+     - a for agenda
+     - l for Log
+* TODO stuff
+** C-c C-t : To cycle through TODO life cycle.
+** DONE testing todo done.
+   CLOSED: [2017-02-06 Mon 10:57]
+   DEADLINE: <2017-02-06 Mon>
+** Config to add multiple state of TODO lifecycle
+
+#+begin_src
+;; Setting TODO Order
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "DOING(i)" "PENDING(p)" "MEETING(m)" "|" "DONE(d)" "CANCELED(c)")))
+#+end_src
+
+* Random Stuff
+  - C-u M-! : Allows to run shell command and output the result on the current view.
+  - C-u 2 M-! : Passes 2 as argument. Is it useful ?
+  - C-Shift-Backspace : Delete line.
+  - M-x customize-apropos <text> : Creates a new buffer with all the variable matching the text that can be custumizable. The content is basically added to .emacs file.
+  - C-x C+ zoom in, C-x C- Zoom out.
+  - C-x C-0 restore default font.
+  - C-] : Cancel a command.
+* Searching
+  - M-% string RET newstring RET : y
+* Cool setting
+  -[[https://zeekat.nl/articles/making-emacs-work-for-me.html#sec-10-6][emacsConfig]]
+* Sequence Diagram :
+** Installation :
+*** Get plantUml
+    - [[http://eschulte.github.io/babel-dev/DONE-integrate-plantuml-support.html][plantUmlOrgMode]]
+    - init file changes
+
+      ;; active Org-babel languages
+    (org-babel-do-load-languages
+    'org-babel-load-languages
+    '(;; other Babel languages
+    (plantuml . t)))
+
+    - Add plantUml jar to the path
+      (setq org-plantuml-jar-path
+      (expand-file-name "~/src/org/contrib/scripts/plantuml.jar"))
+*** Install graphiz and dot
+    brew install libtool
+    brew link libtool
+    brew install graphviz
+    brew link --overwrite graphviz
+    [[http://plantuml.com/graphviz-dot][Source]]
+** Example
+#+begin_src plantuml :file tryout.png
+  Alice -> Bob: Authentication Request
+  Bob -> Alice: Authentication Response
+  Alice -> Bob: get Data
+  Bob -> Alice: DATA
+  Alice -> Shaan: setData(DATA)
+  Shaan -> Alice: DONE
+#+end_src
+
+#+begin_src plantuml :file tryout1.png
+
+title Hello World
+scale 600 width
+note "An Example of Class Diagram" as NOTE1
+
+interface Interface {
+    public void method1();
+    public void method2();
+}
+
+class NullObject extends Interface
+note bottom of NullObject: refer to design patter "null object"
+
+abstract class BaseClass implements Interface {
+    private int flag;
+    protected void helper(){...}
+}
+
+class Concrete1 extends BaseClass
+class Concrete2 extends BaseClass
+
+#+end_src
+
+#+begin_src plantuml :file tryout3.png
+:Main Admin: as Admin
+(Use the application) as (Use)
+
+User -> (Start)
+User --> (Use)
+
+Admin ---> (Use)
+
+note right of Admin : This is an example.
+
+note right of (Use)
+  A note can also
+  be on several lines
+end note
+
+note "This note is connected\nto several objects." as N2
+(Start) .. N2
+N2 .. (Use)
+#+end_src
+
+* Table Export
+  - HTML : C-c + C-e -- h-o
+  - PDF : C- + C-e   -- l-o
+* Checklist
+  - Checkilst Testing [2/4]
+    - [X] item1
+    - [X] item2
+    - [ ] item4
+    - [ ] item4
+
+  - Checklist Testing 2 [66%]
+    - [X] item1
+    - [X] item2
+    - [ ] item3
+
+ #+ATTR_HTML: :border 2 :rules all :frame border
+ | Command       | What it does ?                        |
+ |---------------+---------------------------------------|
+ | M+Shift+Enter | to add a new                          |
+ | C-c C-c       | To mark the task complete             |
+ | / C-c C-c     | At the top line to show task complete |
+ | % C-c C-c     | Shows in percentage                   |
+* Resources:
+These are some of the awesome people who were kind enough to share there knowledge. Please like and share their videos if you like.
+- [[https://www.youtube.com/user/rpdillon/videos][Hack Emacs By Rick Dillon]]
+- [[https://www.youtube.com/channel/UCfbGTpcJyEOMwKP-eYz3_fg][Rainer Konig]]
+- [[https://www.youtube.com/watch?v=SzA2YODtgK4][Getting Started With Org-mode]]
+
+If I missed any other reference, please do let me know.

@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Tutorial</title>
+<!-- 2017-02-12 Sun 12:32 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Mohammed" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Tutorial</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Windows</a></li>
+<li><a href="#sec-2">2. Frames</a></li>
+<li><a href="#sec-3">3. Tables</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-3-0-1">3.0.1. Table</a></li>
+<li><a href="#sec-3-0-2">3.0.2. Column :</a></li>
+<li><a href="#sec-3-0-3">3.0.3. Row :</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Point :</a></li>
+<li><a href="#sec-5">5. Mark :</a></li>
+<li><a href="#sec-6">6. Library loading</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Load</a></li>
+<li><a href="#sec-6-2">6.2. require</a></li>
+<li><a href="#sec-6-3">6.3. auto-load</a></li>
+<li><a href="#sec-6-4">6.4. idle-require</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Agenda :</a>
+<ul>
+<li><a href="#sec-7-1">7.1. AgendaTutorial</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. <span class="todo TODO">TODO</span> stuff</a>
+<ul>
+<li><a href="#sec-8-1">8.1. C-c C-t : To cycle through TODO life cycle.</a></li>
+<li><a href="#sec-8-2">8.2. <span class="done DONE">DONE</span> testing todo done.</a></li>
+<li><a href="#sec-8-3">8.3. Config to add multiple state of TODO lifecycle</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. Random Stuff</a></li>
+<li><a href="#sec-10">10. Searching</a></li>
+<li><a href="#sec-11">11. Cool setting</a></li>
+<li><a href="#sec-12">12. Sequence Diagram :</a>
+<ul>
+<li><a href="#sec-12-1">12.1. Installation :</a>
+<ul>
+<li><a href="#sec-12-1-1">12.1.1. Get plantUml</a></li>
+<li><a href="#sec-12-1-2">12.1.2. Install graphiz and dot</a></li>
+</ul>
+</li>
+<li><a href="#sec-12-2">12.2. Example</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. Table Export</a></li>
+<li><a href="#sec-14">14. Checklist</a></li>
+<li><a href="#sec-15">15. Resources:</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Windows</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>c-x 2 : Split window horizontally
+</li>
+<li>c-x 3 : Split window vertically
+</li>
+<li>c-x 0 : Close current window
+</li>
+<li>c-x 1 : Close all but the current window
+</li>
+<li>c-x o : Cycle through the open windows.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Frames</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>C-x 5 b : Switch buffers by opening a new frame.
+</li>
+<li>C-x 5 0 : Close the current frame.
+</li>
+<li>C-x 5 f : Open a file in new frame.
+</li>
+<li>C-x 5 o : switch between frame.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Tables</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-0-1" class="outline-4">
+<h4 id="sec-3-0-1"><span class="section-number-4">3.0.1</span> Table</h4>
+<div class="outline-text-4" id="text-3-0-1">
+<ul class="org-ul">
+<li>C-c | : Format the selected content to table.
+</li>
+<li>C-u 2 C-c | : Formats the selected content to table and column are decided based on 2 spaces.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-0-2" class="outline-4">
+<h4 id="sec-3-0-2"><span class="section-number-4">3.0.2</span> Column :</h4>
+<div class="outline-text-4" id="text-3-0-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Key</th>
+<th scope="col" class="left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">M-left arrow</td>
+<td class="left">move column left</td>
+</tr>
+
+<tr>
+<td class="left">M-right arrow</td>
+<td class="left">move column right</td>
+</tr>
+
+<tr>
+<td class="left">Tab</td>
+<td class="left">move forward</td>
+</tr>
+
+<tr>
+<td class="left">Shift-Tab</td>
+<td class="left">move backword</td>
+</tr>
+
+<tr>
+<td class="left">M-Shift-left</td>
+<td class="left">delete column</td>
+</tr>
+
+<tr>
+<td class="left">M-Shift-right</td>
+<td class="left">insert column</td>
+</tr>
+
+<tr>
+<td class="left">Sorting Column</td>
+<td class="left">C-c ^ &#x2013; Then it ask for the type of sorting : Date, Numeric, String</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-3-0-3" class="outline-4">
+<h4 id="sec-3-0-3"><span class="section-number-4">3.0.3</span> Row :</h4>
+<div class="outline-text-4" id="text-3-0-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Key</th>
+<th scope="col" class="left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">M-up Arrow</td>
+<td class="left">move row up</td>
+</tr>
+
+<tr>
+<td class="left">M-down</td>
+<td class="left">move row down</td>
+</tr>
+
+<tr>
+<td class="left">C-c ret</td>
+<td class="left">Add horizontal rule : Mostly used for Table column names.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Point :</h2>
+<div class="outline-text-2" id="text-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Command</th>
+<th scope="col" class="left">Key Combination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Next line</td>
+<td class="left">C-n</td>
+</tr>
+
+<tr>
+<td class="left">Previous line</td>
+<td class="left">C-p</td>
+</tr>
+
+<tr>
+<td class="left">Next Charecter</td>
+<td class="left">C-f</td>
+</tr>
+
+<tr>
+<td class="left">Previous Charecter</td>
+<td class="left">C-b</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Next word</td>
+<td class="left">M-f</td>
+</tr>
+
+<tr>
+<td class="left">Previous word</td>
+<td class="left">M-b</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Beginning of line</td>
+<td class="left">C-a</td>
+</tr>
+
+<tr>
+<td class="left">End of line</td>
+<td class="left">C-e</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Start of buffer</td>
+<td class="left">M-&lt;</td>
+</tr>
+
+<tr>
+<td class="left">ENd of buffer</td>
+<td class="left">M-&gt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Mark :</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>C-space to start the mark
+</li>
+<li>C-w : Cut the text
+</li>
+<li>M-w : Copy the text
+</li>
+<li>C-y : Paste the text
+</li>
+<li>C-x C-x : Go from point to mark
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Library loading</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Load</h3>
+</div>
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> require</h3>
+</div>
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> auto-load</h3>
+</div>
+<div id="outline-container-sec-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> idle-require</h3>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Agenda :</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> <a href="http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html">AgendaTutorial</a></h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>C-c C-s to invoke calendar to schedule a task.
+</li>
+<li>C-c a to invoke aendar mode.
+<ul class="org-ul">
+<li>t for TODO
+</li>
+<li>a for agenda
+</li>
+<li>l for Log
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> <span class="todo TODO">TODO</span> stuff</h2>
+<div class="outline-text-2" id="text-8">
+</div><div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> C-c C-t : To cycle through TODO life cycle.</h3>
+</div>
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> <span class="done DONE">DONE</span> testing todo done.</h3>
+<div class="outline-text-3" id="text-8-2">
+</div>
+</div>
+<div id="outline-container-sec-8-3" class="outline-3">
+<h3 id="sec-8-3"><span class="section-number-3">8.3</span> Config to add multiple state of TODO lifecycle</h3>
+<div class="outline-text-3" id="text-8-3">
+<pre class="example">
+;; Setting TODO Order
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "DOING(i)" "PENDING(p)" "MEETING(m)" "|" "DONE(d)" "CANCELED(c)")))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Random Stuff</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>C-u M-! : Allows to run shell command and output the result on the current view.
+</li>
+<li>C-u 2 M-! : Passes 2 as argument. Is it useful ?
+</li>
+<li>C-Shift-Backspace : Delete line.
+</li>
+<li>M-x customize-apropos &lt;text&gt; : Creates a new buffer with all the variable matching the text that can be custumizable. The content is basically added to .emacs file.
+</li>
+<li>C-x C+ zoom in, C-x C- Zoom out.
+</li>
+<li>C-x C-0 restore default font.
+</li>
+<li>C-] : Cancel a command.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Searching</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>M-% string RET newstring RET : y
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Cool setting</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+-<a href="https://zeekat.nl/articles/making-emacs-work-for-me.html#sec-10-6">emacsConfig</a>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Sequence Diagram :</h2>
+<div class="outline-text-2" id="text-12">
+</div><div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> Installation :</h3>
+<div class="outline-text-3" id="text-12-1">
+</div><div id="outline-container-sec-12-1-1" class="outline-4">
+<h4 id="sec-12-1-1"><span class="section-number-4">12.1.1</span> Get plantUml</h4>
+<div class="outline-text-4" id="text-12-1-1">
+<ul class="org-ul">
+<li><a href="http://eschulte.github.io/babel-dev/DONE-integrate-plantuml-support.html">plantUmlOrgMode</a>
+</li>
+<li>init file changes
+
+<p>
+;; active Org-babel languages
+</p>
+</li>
+</ul>
+<p>
+(org-babel-do-load-languages
+'org-babel-load-languages
+'(;; other Babel languages
+(plantuml . t)))
+</p>
+
+<ul class="org-ul">
+<li>Add plantUml jar to the path
+(setq org-plantuml-jar-path
+(expand-file-name "~/src/org/contrib/scripts/plantuml.jar"))
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-12-1-2" class="outline-4">
+<h4 id="sec-12-1-2"><span class="section-number-4">12.1.2</span> Install graphiz and dot</h4>
+<div class="outline-text-4" id="text-12-1-2">
+<p>
+brew install libtool
+brew link libtool
+brew install graphviz
+brew link &#x2013;overwrite graphviz
+<a href="http://plantuml.com/graphviz-dot">Source</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12-2" class="outline-3">
+<h3 id="sec-12-2"><span class="section-number-3">12.2</span> Example</h3>
+<div class="outline-text-3" id="text-12-2">
+
+<div class="figure">
+<p><img src="tryout.png" alt="tryout.png" />
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="tryout1.png" alt="tryout1.png" />
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="tryout3.png" alt="tryout3.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Table Export</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>HTML : C-c + C-e &#x2013; h-o
+</li>
+<li>PDF : C- + C-e   &#x2013; l-o
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Checklist</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>Checkilst Testing <code>[2/4]</code>
+<ul class="org-ul">
+<li><code>[X]</code> item1
+</li>
+<li><code>[X]</code> item2
+</li>
+<li><code>[&#xa0;]</code> item4
+</li>
+<li><code>[&#xa0;]</code> item4
+</li>
+</ul>
+</li>
+
+<li>Checklist Testing 2 <code>[66%]</code>
+<ul class="org-ul">
+<li><code>[X]</code> item1
+</li>
+<li><code>[X]</code> item2
+</li>
+<li><code>[&#xa0;]</code> item3
+</li>
+</ul>
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Command</th>
+<th scope="col" class="left">What it does ?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">M+Shift+Enter</td>
+<td class="left">to add a new</td>
+</tr>
+
+<tr>
+<td class="left">C-c C-c</td>
+<td class="left">To mark the task complete</td>
+</tr>
+
+<tr>
+<td class="left">/ C-c C-c</td>
+<td class="left">At the top line to show task complete</td>
+</tr>
+
+<tr>
+<td class="left">% C-c C-c</td>
+<td class="left">Shows in percentage</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Resources:</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+These are some of the awesome people who were kind enough to share there knowledge. Please like and share their videos if you like.
+</p>
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/user/rpdillon/videos">Hack Emacs By Rick Dillon</a>
+</li>
+<li><a href="https://www.youtube.com/channel/UCfbGTpcJyEOMwKP-eYz3_fg">Rainer Konig</a>
+</li>
+<li><a href="https://www.youtube.com/watch?v=SzA2YODtgK4">Getting Started With Org-mode</a>
+</li>
+</ul>
+
+<p>
+If I missed any other reference, please do let me know.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Mohammed</p>
+<p class="date">Created: 2017-02-12 Sun 12:32</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
